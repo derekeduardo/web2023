@@ -24,7 +24,6 @@
     
         // Manipular los datos y mostrarlos en el contenedor
         $contenedorDatos = '<div id="datos-api">';
-    
         if (!empty($data)) {
             foreach ($data as $carro) {
                 $contenedorDatos .= '
@@ -33,7 +32,8 @@
                         <h3>' . $carro['marca'] . '</h3>
                         <p>' . $carro['descripcion'] . '</p>
                         <form action="../services/api_favoritos.php" method="get">
-                        <button type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
+                            <input type="text" name="action" value="1" style="display:none;">
+                            <button type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
                         </form>
                         <form action="#" method="get">
                             <button type="submit" value="'. $carro['id'] .'">Test Drive</button>

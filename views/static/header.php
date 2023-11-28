@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $title_info = "Welcome!";
     if (isset($_GET['brand'])){
         $marca = $_GET['brand'];

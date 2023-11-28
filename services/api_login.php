@@ -15,7 +15,9 @@ $resultado = mysqli_query($conexion, $consulta);
 if (mysqli_num_rows($resultado) == 1) {
     // Iniciar sesión
     session_start();
-    $_SESSION["user"] = $user;
+    $fila = mysqli_fetch_assoc($resultado);
+    $_SESSION["user"] = $fila['usuario'];
+    $_SESSION["id_usuario"] = $fila['id_usuario'];
 
     // Redirigir al usuario a la página principal
     header("Location: ../index.php");
