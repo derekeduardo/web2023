@@ -12,6 +12,9 @@
     <a href="./views/CarsView.php?brand=Mercedes">Mercedes</a>
     <br>
     <br>
+    <a href="./views/perfil.php">Perfil</a>
+    <br>
+    <br>
     <a href="./services/logout.php">Logout</a>
     <br>
     <?php

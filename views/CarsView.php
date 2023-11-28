@@ -35,8 +35,8 @@
                             <input type="text" name="action" value="1" style="display:none;">
                             <button type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
                         </form>
-                        <form action="#" method="get">
-                            <button type="submit" value="'. $carro['id'] .'">Test Drive</button>
+                        <form action="../services/api_testdrive.php" method="post">
+                            <button type="submit" name="id" value="'. $carro['id'] .'">Test Drive</button>
                         </form>
                         <img height="200px" src="data:image/jpg;base64,' . $carro['imagen'] . '">
                     </div>';
