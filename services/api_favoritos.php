@@ -4,7 +4,7 @@ session_start();
 // Verificar si el usuario está autenticado (esto depende de tu lógica de autenticación)
 if (!isset($_SESSION['usuario_id'])) {
     http_response_code(401); // No autorizado
-    echo json_encode(['message' => 'Usuario no autorizado']);
+    echo json_encode(['message' => 'Usuario no esta autorizado']);
     exit();
 }
 
