@@ -1,21 +1,11 @@
-<?php include './views/static/header.php'?>
+<?php include './views/components/header.php'?>
 <h1>BIENVENIDO</h1>
     <br>
-    <a href="./views/login.php">Iniciar Sesión</a>
+    <a href="./views/CarsView.php?brand=lexus">Lexus</a>
     <br>
-    <a href="./views/registro.php">Registrarse</a>
+    <a href="./views/CarsView.php?brand=jeep">Jeep</a>
     <br>
-    <a href="./views/CarsView.php?brand=Lexus">Lexus</a>
-    <br>
-    <a href="./views/CarsView.php?brand=Jeep">Jeep</a>
-    <br>
-    <a href="./views/CarsView.php?brand=Mercedes">Mercedes</a>
-    <br>
-    <br>
-    <a href="./views/perfil.php">Perfil</a>
-    <br>
-    <br>
-    <a href="./services/logout.php">Logout</a>
+    <a href="./views/CarsView.php?brand=mercedes">Mercedes</a>
     <br>
     <?php
         if(isset($_SESSION['id_usuario'])){
@@ -23,5 +13,5 @@
         };
     ?>
     <br>
-<?php include './views/static/footer.php' ?>
+<?php include './views/components/footer.php' ?>
 

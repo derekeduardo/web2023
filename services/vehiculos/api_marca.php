@@ -1,7 +1,7 @@
 <?php
 header("Content-Type: application/json");
 
-require_once('../db/configbd.php');
+require_once('../../db/configbd.php');
 
 $con = conectarDB();
 
