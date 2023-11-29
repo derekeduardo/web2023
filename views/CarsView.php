@@ -1,5 +1,29 @@
-<?php include './components/header.php'?>
+<?php include './components/session.php'?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title><?php echo $title_info ?></title>
+</head>
+<body>    
+    <nav>
+        <div>
+            <ul>
+                <li><h1>Logo</h1></li>
+                <li><div>
+                    <a href="./views/perfil.php">Perfil</a>
+                    <a href="./services/logout.php">Logout</a>
+                </div></li>
+                <li><div>
+                    <a href="./views/login.php">Iniciar Sesión</a>
+                    <a href="./views/registro.php">Registrarse</a>
+                </div></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Contenedor con la información de la marca seleccionada -->
 
@@ -11,11 +35,10 @@
         if($response_container !== false){
             $info = json_decode($response_container, true);
             $container = "<div>";
-        
             if (!empty($info)) {
                 foreach($info as $brand){
                     $container .= '
-                        <div>
+                        <div style="background-color: red;">
                             <img height="200px" src="data:image/jpg;base64,' . $brand['banner'] . '">
                             <div>
                                 <h3>'. $brand['marca'] .'</h3>
@@ -76,6 +99,5 @@
     
     ?>
 
-<?php include './components/footer.php'?>
-<!-- </body>
-</html> -->
+</body>
+</html>

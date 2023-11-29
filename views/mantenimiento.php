@@ -1,3 +1,6 @@
+<!-- Añadier session.php para trabajar con la sesión del usuario
+    Insertar el archivo link css
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
