@@ -186,6 +186,80 @@ body{
 
 /* Inicio de sesión */
 
+
+
+.contenedorL{
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+
+}
+
+.bienvenido{
+    margin-right: 48px;
+}
+
+.div{
+    border-color: #F5B60F;
+    border: 1px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    color: #fff;
+    margin-bottom: 8px;
+    position: relative;
+}
+.form .input{
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 46px;
+    background-color: #ffffff;
+    border-radius: 13px;
+    border: 1px solid;
+    border-color: #8e8e8e;
+}
+
+.contenedorF{
+    width: 300px;
+}
+
+.form button{
+    margin-top: 72px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 8px 48px;
+    background-color: #F5B60F;
+    color: black;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    text-align: left;
+}
+
+.login{
+    font-size: 32px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+    color: #F5B60F;
+}
+
+.label{
+    margin-bottom: 8px;
+}
+
 /* Registrarse */
 
 /* Cars View */
