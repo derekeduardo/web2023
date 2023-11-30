@@ -3,7 +3,6 @@ class UsuarioServicio{
     private $db;
     private $key = 'semestral';
     private $m_cifrado = 'AES-128-CTR';
-    private $i_vector = '123456789012345';
     private $option = 0;
 
 
