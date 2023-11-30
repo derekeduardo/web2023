@@ -6,6 +6,9 @@
         $marca_c = ucfirst($marca);
         $title_info = ucfirst($marca);
     }
+    if (isset($_SESSION['id_usuario'])){
+        $key = $_SESSION['id_usuario'];
+    }
 ?>
 <!-- <!DOCTYPE html>
 <html lang="en">

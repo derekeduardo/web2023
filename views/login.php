@@ -11,7 +11,7 @@
 </head>
 <body>
     <h1>Login</h1>
-    <form action="../services/api_login.php" method="post">
+    <form action="../recursos/api_login.php" method="post">
         <input type="text" name="user" placeholder="Usuario">
         <input type="password" name="password" placeholder="Contraseña">
         <br>

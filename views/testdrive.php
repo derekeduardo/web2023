@@ -1,7 +1,7 @@
 <!-- Añadier session.php para trabajar con la sesión del usuario
     Insertar el archivo link css
 -->
-
+<?php include __DIR__.'../components/session.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

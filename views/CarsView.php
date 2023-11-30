@@ -28,7 +28,7 @@
     <!-- Contenedor con la información de la marca seleccionada -->
 
     <?php 
-        $URL = 'http://localhost/semestral%202023/services/vehiculos/get_info.php?brand='.$marca.'';
+        $URL = 'http://localhost/semestral%202023/recursos/vehiculos/get_info.php?brand='.$marca.'';
 
         $response_container = file_get_contents($URL);
         
@@ -61,7 +61,7 @@
     <?php
 
     // Hacer la solicitud a la API
-    $api_url = 'http://localhost/semestral%202023/services/vehiculos/api_marca.php?name='.$marca.'';
+    $api_url = 'http://localhost/semestral%202023/recursos/vehiculos/api_marca.php?name='.$marca.'';
     $response = file_get_contents($api_url);
     
     if ($response !== false) {
@@ -80,7 +80,8 @@
                             <input type="text" name="action" value="1" style="display:none;">
                             <button type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
                         </form>
-                        <form action="../services/api_testdrive.php" method="post">
+                        <form action="../recursos/api_testdrive.php" method="post">
+                            <input type="text" name="key" value="'.$key.'" style="display: none;">
                             <button type="submit" name="id" value="'. $carro['id'] .'">Test Drive</button>
                         </form>
                         <img height="200px" src="data:image/jpg;base64,' . $carro['imagen'] . '">

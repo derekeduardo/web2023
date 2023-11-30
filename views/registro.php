@@ -10,7 +10,7 @@
 <body>
       
 <h1>Registro</h1>
-    <form action="../services/api_register.php" name="registro" method="post">
+    <form action="../recursos/api_register.php" name="registro" method="post">
         <label for="correo">Correo: </label>
         <input type="text" name="correo" id="correo">
         <br>
