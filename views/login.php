@@ -37,7 +37,10 @@
             <div class="div"></div>
             <div class="contenedorF">
                 <h1 class=login>Login</h1>
-                <form class="form" action="../services/api_login.php" method="post">
+                <form class="form" action="../api.php" method="post">
+                    <input type="text" name="resource" value="usuarios" style="display: none;"><!-- Necesario para completar la solicitud --> 
+                    <input type="text" name="service" value="login" style="display: none;"><!-- Necesario para completar la solicitud --> 
+
                     <div class="separacion">
                         <label class="label"> Usuario: </label>
                         <input class="input" type="text" name="user" placeholder="Usuario">
@@ -49,7 +52,6 @@
                     </div>
 
                     <button class="boton" type="submit">Iniciar sesión</button>
-                    
                 </form>
                 <button><a href="registro.php">Registrarse</a></button>
             </div>

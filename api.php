@@ -15,10 +15,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'GET'
         case 'favoritos':
             include 'recursos/favoritos/favoritos.php';
         break;
+
+        case 'usuarios':
+            include 'recursos/usuarios/usuario.php';
+        break;
     
         default:
         http_response_code(400);
-        echo json_encode(['message' => 'Recurso solicitado no encontrado 🤔']);
+        echo json_encode(['message' => 'Recurso solicitado no encontrado']);
         break;
     }
 }
