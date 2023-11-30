@@ -31,7 +31,7 @@
 
     <!-- img de contenido -->
     <div class="contenedor">
-        <img class="img" src="img/jeep.png">
+        <img class="img" src="./assets/jeep.png">
         <div class="contenido">
             <div class="textos">
                 <h1 class="titulo">Descubre tu acompañante de aventuras</h1>
@@ -72,6 +72,7 @@
         </a>
     </div>
 
+
     <!-- Ultimo Favorito -->
     <br>
     <?php
@@ -84,6 +85,3 @@
 
     </body>
 </html>
-
-
-

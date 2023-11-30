@@ -151,6 +151,158 @@ body{
     color: #1A1919;
     transform: scale(1.1); /* Hacer que el cuadro se vea más grande en hover */
     margin-left: 8px;
+    background-color: #1A1919;
+}
+
+.navbar {
+    display: flex;
+    height: 80px;
+    padding: 10px 48px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    background-color: #1A1919;
+    color: #fff;
+    margin-bottom: 10px;
+    flex-direction: row;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+}
+
+.navlink a{
+    list-style: none;
+    margin-right: 30px; /* Agregado para espaciar los elementos de la lista */
+    flex-direction: row;
+    padding: 8px;
+    font-family: "Roboto-Black", Helvetica;
+    color: #fff;
+    text-decoration: none;
+}
+
+.navlink a:hover{
+    color: #fff;
+    text-decoration: none;
+    border: 0.5px solid black;
+    background-color: black;
+    border-radius: 5px;
+}
+
+.autorizacion a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    flex-direction: row;
+    padding: 8px;
+}
+
+/* contendio */
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+}
+.contenido{
+    font-size: 8px;
+    position: absolute;
+    padding: 132.5px 80px ;
+    flex-direction: row;
+    text-align: left;
+}
+.titulo{
+    font-size: 56px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.parrafo{
+    font-size: 16px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+.contenido a{
+    margin-top: 72px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 8px 48px;
+    background-color: #F5B60F;
+    color: black;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    text-align: left;
+}
+
+.contenido a:hover{
+    color: #fff;
+    text-decoration: none;
+    border: 0.5px solid black;
+    background-color: black;
+    border-radius: 16px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+}
+.img{
+    width: 100%;
+    display:block;
+    height: auto;
+} 
+
+.textos{
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+}
+
+
+
+/* prueba de carrusel */
+.marcas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 48px;
+    background-color: #1A1919;
+    color: #fff;
+    margin-bottom: 10px;
+    font-family: "Roboto-Black", Helvetica;
+    position: relative;
+}
+
+.cuadro {
+    margin-top: -200px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
+    padding: 24px;
+    background-color: #696969;
+    border-radius: 24px;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s; /* Añadir transform a las propiedades en transición */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: 16px;
+}
+
+.cuadro:hover {
+    background-color: #fff;
+    color: #1A1919;
+    transform: scale(1.1); /* Hacer que el cuadro se vea más grande en hover */
+    margin-left: 8px;
 }
 
 .cuadro h3 {
@@ -185,6 +337,80 @@ body{
 
 
 /* Inicio de sesión */
+
+
+
+.contenedorL{
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+
+}
+
+.bienvenido{
+    margin-right: 48px;
+}
+
+.div{
+    border-color: #F5B60F;
+    border: 1px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    color: #fff;
+    margin-bottom: 8px;
+    position: relative;
+}
+.form .input{
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 46px;
+    background-color: #ffffff;
+    border-radius: 13px;
+    border: 1px solid;
+    border-color: #8e8e8e;
+}
+
+.contenedorF{
+    width: 300px;
+}
+
+.form button{
+    margin-top: 72px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 8px 48px;
+    background-color: #F5B60F;
+    color: black;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    text-align: left;
+}
+
+.login{
+    font-size: 32px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+    color: #F5B60F;
+}
+
+.label{
+    margin-bottom: 8px;
+}
 
 /* Registrarse */
 
