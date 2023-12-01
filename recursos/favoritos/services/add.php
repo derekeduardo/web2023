@@ -6,11 +6,11 @@
     $favoritos_servicio = new FavoritosServicio($db);
 
     //Solicitamos los datos necesarios
-    $id_usuario = $_POST['key'] ?? '';
+    //$id_usuario = $_POST['key'] ?? '';
     $id_carro = $_POST['id'] ?? '';
-    if($id_carro != '' && $id_usuario != ''){
+    if($id_carro != ''){
 
-        $favoritos_servicio -> addFavorito($id_usuario, $id_carro);
+        $favoritos_servicio -> addFavorito($id_carro);
 
     }else{
         http_response_code(400);

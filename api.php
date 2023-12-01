@@ -19,6 +19,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'GET'
         case 'usuarios':
             include 'recursos/usuarios/usuario.php';
         break;
+
+        case 'testdrive':
+            include 'recursos/testdrive/usuario.php';
+        break;
     
         default:
         http_response_code(400);
