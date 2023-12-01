@@ -1,10 +1,6 @@
 <?php
 class UsuarioServicio{
     private $db;
-    private $key = 'semestral';
-    private $m_cifrado = 'AES-128-CTR';
-    private $option = 0;
-
 
     public function __construct(Database $db)
     {
@@ -14,9 +10,8 @@ class UsuarioServicio{
     public function login($username, $password)
     {
         $con  = $this->db->getConnection();
-
         $userData = $this->getCredentials($username);
-        if(!empty($userData) && $this->verificarPassword($password, $userData['pass'], $userData['vector_i'])){
+        if(!empty($userData) && $this->verificarPassword($password, $userData['pass'])){
             session_start();
             $_SESSION['user'] = $userData['username'];
             $_SESSION['id_usuario'] = $userData['id'];
@@ -34,20 +29,19 @@ class UsuarioServicio{
 
         $con = $this->db->getConnection();
 
-        $sql = 'SELECT id_usuario, usuario, rol, contrasena, vector_i FROM usuarios WHERE usuario = ?';
+        $sql = 'SELECT id_usuario, usuario, rol, contrasena FROM usuarios WHERE usuario = ?';
 
         $stmt = $con->prepare($sql);
         $stmt->bind_param('s', $username);
         $stmt->execute();
-        $stmt->bind_result($id_usuario, $user, $rol, $contrasena, $vector_i);
+        $stmt->bind_result($id_usuario, $user, $rol, $contrasena);
         
         if($stmt->fetch()){
             $user_data = array(
                 'id' => $id_usuario,
                 'username' => $user,
                 'rol' => $rol,
-                'pass' => $contrasena,
-                'vector_i' => $vector_i
+                'pass' => $contrasena
             );
             $stmt -> close();
             return $user_data;
@@ -62,7 +56,6 @@ class UsuarioServicio{
     public function register($email, $username, $password)
     {
         $con  = $this->db->getConnection();
-        $vector_i = openssl_random_pseudo_bytes(16);
 
         if($this->getUser($username)){
             header("Location: http://localhost/semestral%202023/views/registro.php?alert=1");
@@ -70,12 +63,11 @@ class UsuarioServicio{
             exit();
         }
         
-        $passwordEncriptado = $this->encriptarPassword($password, $vector_i);
 
-        $sql = "INSERT INTO usuarios (correo, usuario, contrasena, vector_i) VALUES (?,?,?,?)";
+        $sql = "INSERT INTO usuarios (correo, usuario, contrasena) VALUES (?,?,?)";
 
         $stmt = $con->prepare($sql);
-        $stmt->bind_param('ssss', $email, $username, $passwordEncriptado, $vector_i);
+        $stmt->bind_param('sss', $email, $username, $password);
         
         if($stmt->execute()){
             header("Location: http://localhost/semestral%202023/views/login.php?alert=2");
@@ -108,13 +100,8 @@ class UsuarioServicio{
         }
     }
 
-    function encriptarPassword($password, $vector_i){
-        return openssl_encrypt($password, $this->m_cifrado, $this->key, $this->option, $vector_i);
-    }
-
-    function verificarPassword($password, $storage_password, $vector_i){
-        $e_password = $this->encriptarPassword($password, $vector_i);
-        return hash_equals($storage_password, $e_password);
+    function verificarPassword($password, $storage_password){
+        return $password === $storage_password;
     }
 }
 
