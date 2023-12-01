@@ -37,13 +37,13 @@
                 <h1 class="titulo">Descubre tu acompañante de aventuras</h1>
                 <p class="parrafo"> Explora una exquisita selección de vehículos que no solo satisfacen tus necesidades prácticas, sino que también despiertan la pasión por la conducción</p>
             </div>
-            <a href="./views/CarsView.php?brand=jeep" class="boton">Descubre jeep</a>
+            <a href="./views/concesionario.php?brand=jeep" class="boton">Descubre jeep</a>
         </div>
     </div> 
 
     <!-- marcas -->
     <div class="marcas">
-        <a class="cuadro" href="./views/CarsView.php?brand=jeep">
+        <a class="cuadro" href="./views/concesionario.php?brand=jeep">
             <p class="marca">Marca</p> 
             <h3>Jeep</h3>
             <br>
@@ -53,7 +53,7 @@
         </a>
 
 
-        <a class="cuadro" href="./views/CarsView.php?brand=lexus">
+        <a class="cuadro" href="./views/concesionario.php?brand=lexus">
             <p class="marca">Marca</p> 
             <h3>Lexus</h3>
             <br>
@@ -62,7 +62,7 @@
             <p class="marca">Ver mas</p> 
         </a>
 
-        <a class="cuadro" href="./views/CarsView.php?brand=mercedes">
+        <a class="cuadro" href="./views/concesionario.php?brand=mercedes">
             <p class="marca">Marca</p> 
             <h3>Mercedes Benz</h3>
             <br>

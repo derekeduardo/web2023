@@ -1,14 +1,13 @@
-<?php include './static/header.php'?>
+<?php include './components/session.php'?>
 
-    <!-- Contenedor para mostrar los datos de la API -->
-    <!-- <div id="datos-api"></div> -->
-
+<div>
+    <h2>AQUÍ FALTA AÑADIR EL NAV</h2>
+</div>
 
     <?php 
     // Hacer la solicitud a la API
-    $api_url = 'http://localhost/semestral%202023/services/api_favoritos.php?action=2';
+    $api_url = 'http://localhost/semestral%202023/api.php?resource=favoritos&service=get&key='.$key;
     $response = file_get_contents($api_url);
-    
     if ($response !== false) {
         $data = json_decode($response, true);
     
@@ -20,17 +19,18 @@
                     <div>
                         <img height="200px" src="data:image/jpg;base64,' . $carro['imagen'] . '">
                         <div>
-                            <h2>' . $caro['nombre'] . '<r/h2>
+                            <h2>' . $carro['nombre'] . '<r/h2>
                             <h3>' . $carro['marca'] . '</h3>
                             <p>' . $carro['descripcion'] . '</p>
                         </div>
                         <div>
-                            <form action="#" method="get">
-                            <input type="text" name="action" value="1" style="display:none;">
-                            <button type="submit" name="id" value="'. $carro['id'] .'">Quitar Favorito</button>
+                            <form action="../api.php" method="post">
+                            <input type="text" name="resource" value="favoritos" style="display:none;">
+                            <input type="text" name="service" value="delete" style="display:none;">
+                            <button type="submit" name="id" value="'. $carro['id_carro'] .'">Quitar Favorito</button>
                             </form>
                             <form action="#" method="get">
-                                <button type="submit" value="'. $carro['id'] .'">Test Drive</button>
+                                <button type="submit" value="'. $carro['id_carro'] .'">Test Drive</button>
                             </form>
                         </div>
                     </div>';
@@ -44,8 +44,8 @@
     } else {
         echo 'Error al obtener datos de la API';
     }
-
-    
     ?>
 
-<?php include './static/footer.php'?>
+<div>
+    <h2>AQUÍ FALTA AÑADIR EL FOOTER</h2>
+</div>

@@ -17,6 +17,7 @@
                     <a href="./views/perfil.php">Perfil</a>
                     <a href="./services/logout.php">Logout</a>
                 </div></li>
+
                 <li><div>
                     <a href="./views/login.php">Iniciar Sesión</a>
                     <a href="./views/registro.php">Registrarse</a>
@@ -76,8 +77,9 @@
                         <h2>' . $carro['nombre'] . '</h2>
                         <h3>' . $carro['marca'] . '</h3>
                         <p>' . $carro['descripcion'] . '</p>
-                        <form action="../services/api_favoritos.php" method="get">
-                            <input type="text" name="action" value="1" style="display:none;">
+                        <form action="../api.php" method="post">
+                            <input type="text" name="resource" value="favoritos" style="display:none;">
+                            <input type="text" name="service" value="add" style="display:none;">
                             <button type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
                         </form>
                         <form action="../recursos/api_testdrive.php" method="post">

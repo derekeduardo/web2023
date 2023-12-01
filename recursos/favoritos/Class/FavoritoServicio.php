@@ -7,14 +7,19 @@ class FavoritosServicio{
         $this->db = $db;
     }
 
-    public function addFavorito($id_usuario, $id_carro)
+    public function addFavorito($id_carro)
     {
-        header("Content-Type: application/json");
+        //header("Content-Type: application/json");
         $con = $this->db->getConnection();
+        session_start();
+        if(!isset($_SESSION['id_usuario'])){
+            echo "No se han entrado una sesión de usuario";
+        }
+
+        $id_usuario = $_SESSION['id_usuario'];
 
         if($this -> existsFavorite($id_usuario, $id_carro)){
-            http_response_code(200);
-            echo json_encode (['message' => 'El vehículo con id = ' .$id_carro . ' ya ha sido añadido a tu lista de favoritos']);
+            header("Location: http://localhost/semestral%202023/views/v_favoritos.php?alert=v_exist");
             $con -> close();
             exit();
         }
@@ -30,8 +35,9 @@ class FavoritosServicio{
         {
             $this->createCookie($dato1, $dato2);
         }else{
-            http_response_code(500);
-            echo json_encode(['message' => 'Ha ocurrido un error al momento de guardar la data' . $con -> error]);
+            // http_response_code(500);
+            // echo json_encode(['message' => 'Ha ocurrido un error al momento de guardar la data' . $con -> error]);
+            echo 'Ha ocurrido un error al momento de guardar la información';
             $con -> close();
         }    
     }
@@ -60,18 +66,20 @@ class FavoritosServicio{
 
         $ultimoFavorito = json_encode($row);
         setcookie("ultimo_favorito", $ultimoFavorito, time() + 1800, "/"); // 30 min
-        http_response_code(201);
-        echo json_encode(['message' => 'Se ha creado un nuevo recurso en el sistema (Favorito + Cookie)']);
+        // http_response_code(201);
+        // echo json_encode(['message' => 'Se ha creado un nuevo recurso en el sistema (Favorito + Cookie)']);
+        header("Location: http://localhost/semestral%202023/views/v_favoritos.php?alert=v_create");
     }
 
-    public function deleteFavorito($id_usuario, $id_carro)
+    public function deleteFavorito($id_carro)
     {
-        header("Content-Type: application/json");
         $con = $this->db->getConnection();
+        session_start();
+
+        $id_usuario = $_SESSION['id_usuario'];
 
         if(!$this -> existsFavorite($id_usuario, $id_carro)){
-            http_response_code(200);
-            echo json_encode (['message' => 'No existe el registro solicitado.']);
+            header("Location: http://localhost/semestral%202023/views/v_favoritos.php?alert=reg_not_exist");
             $con -> close();
             exit();
         }
@@ -85,11 +93,9 @@ class FavoritosServicio{
 
         if($resultado)
         {
-            http_response_code(200);
-            echo json_encode(['message' => 'Se ha eliminado el favorito con ID: ' . $id_carro]);
+            header("Location: http://localhost/semestral%202023/views/v_favoritos.php?alert=reg_not_exist");
         }else{
-            http_response_code(500);
-            echo json_encode(['message' => 'Ha ocurrido un error durante el proceso de eliminación' . $stmt -> error]);
+            echo 'Ha ocurrido un error durante el proceso de eliminación' . $stmt -> error;
         }
         $stmt->close();
         $con -> close();

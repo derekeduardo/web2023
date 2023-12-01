@@ -1,7 +1,7 @@
 <?php
 $db = "semestral_2023"; // nombre de la base de datos
 $host = "localhost"; // nombre del servidor
-$pw = ""; // contraseña
+$pw = "root"; // contraseña
 $user = "root"; // usuario
 
 function conectarDB(){
