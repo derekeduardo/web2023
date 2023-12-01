@@ -1,7 +1,9 @@
 <?php
-  require_once('configbd.php');
+  require_once(__DIR__. '../../../recursos/connection/Database.php');
 
-  $con = conectarDB();
+  $db = Database::getInstance();
+
+  $con = $db->getConnection();
    
   if (empty($_POST['nombre']) && empty($_POST['marca']) && empty($_POST['descripcion'])) {
 
