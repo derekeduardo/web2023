@@ -29,7 +29,7 @@
     <!-- Contenedor con la información de la marca seleccionada -->
 
     <?php 
-        $URL = 'http://localhost/semestral%202023/recursos/vehiculos/get_info.php?brand='.$marca.'';
+        $URL = 'http://localhost/semestral%202023/api.php?resource=vehiculos&service=get_info&brand='.$marca.'';
 
         $response_container = file_get_contents($URL);
         
@@ -39,7 +39,7 @@
             if (!empty($info)) {
                 foreach($info as $brand){
                     $container .= '
-                        <div style="background-color: red;">
+                        <div>
                             <img height="200px" src="data:image/jpg;base64,' . $brand['banner'] . '">
                             <div>
                                 <h3>'. $brand['marca'] .'</h3>
@@ -61,7 +61,7 @@
     <!--Listas de Vehiculos -->
 
     <?php
-    $api_url = 'http://localhost/semestral%202023/recursos/vehiculos/api_marca.php?name='.$marca.'';
+    $api_url = 'http://localhost/semestral%202023/api.php?resource=vehiculos&service=get_vehicles&brand='.$marca.'';
     $response = file_get_contents($api_url);
 
     if(!isset($_SESSION['id_usuario'])){
@@ -104,11 +104,11 @@
                                 <form action="../api.php" method="post">
                                     <input type="text" name="resource" value="favoritos" style="display:none;">
                                     <input type="text" name="service" value="add" style="display:none;">
-                                    <button type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
+                                    <button type="submit" name="id" value="'. $carro['id_carro'] .'">Favorito</button>
                                 </form>
                                 <form action="../recursos/api_testdrive.php" method="post">
                                     <input type="text" name="key" value="'.$key.'" style="display: none;">
-                                    <button type="submit" name="id" value="'. $carro['id'] .'">Test Drive</button>
+                                    <button type="submit" name="id" value="'. $carro['id_carro'] .'">Test Drive</button>
                                 </form>
                             </div>
                         ';
