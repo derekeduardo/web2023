@@ -20,6 +20,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'GET'
             include 'recursos/usuarios/usuario.php';
         break;
 
+        case 'vehiculos':
+            include 'recursos/vehiculos/vehiculos.php';
+        break;
+
         case 'testdrive':
             include 'recursos/testdrive/usuario.php';
         break;

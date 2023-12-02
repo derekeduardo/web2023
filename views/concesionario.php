@@ -39,8 +39,8 @@
             </div>
 
             <div class="autorizacion">
-                <a href="./views/login.php">Iniciar sesión</a>
-                <a href="./views/registro.php">Registrarse</a>
+                <a href="login.php">Iniciar sesión</a>
+                <a href="registro.php">Registrarse</a>
             </div>
         </nav>
     <?php } ?>
@@ -48,7 +48,7 @@
     <!-- Contenedor con la información de la marca seleccionada -->
 
     <?php 
-        $URL = 'http://localhost/semestral%202023/recursos/vehiculos/get_info.php?brand='.$marca.'';
+        $URL = 'http://localhost/semestral%202023/api.php?resource=vehiculos&service=get_info&brand='.$marca.'';
 
         $response_container = file_get_contents($URL);
         
@@ -79,53 +79,86 @@
 
 
     <!--Listas de Vehiculos -->
-    <?php
 
-    // Hacer la solicitud a la API
-    $api_url = 'http://localhost/semestral%202023/recursos/vehiculos/api_marca.php?name='.$marca.'';
+    <?php
+    $api_url = 'http://localhost/semestral%202023/api.php?resource=vehiculos&service=get_vehicles&brand='.$marca.'';
     $response = file_get_contents($api_url);
-    
-    if ($response !== false) {
-        $data = json_decode($response, true);
-    
-        // Manipular los datos y mostrarlos en el contenedor
-        $contenedorDatos = '<div class="muestra">';
-        if (!empty($data)) {
-            foreach ($data as $carro) {
-                $contenedorDatos .= '
+
+    if(!isset($_SESSION['id_usuario'])){
+        echo '
+            <div class="sesion-mensaje">
+
+                <div class="sesion__mensaje__imagen">
+                    <img class="alerta" src="../assets/Info.png">
+                </div>
+
+                <div class="mensaje-info">
+                    <h4>Para poder acceder a los servicios de la página debe iniciar sesión</h4>
+                    <spam class="mensaje">Desbloquea todas las funcionalidades al <strong><a href="./login.php">iniciar sesión</a></strong></spam>
+                </div>
+            </div>
+        ';
+    }
+
+    ?>
+
+    <?php if ($response !== false) { $data = json_decode($response, true); ?>
+
+        <?php if(!empty($data)) { ?>
+
+            <?php $listaDeCarros = '<div class="muestra">'; foreach($data as $carro) { ?>
+
+                <?php $listaDeCarros .= '
                     <div class="carros">
-                        <img height="200px" src="data:image/jpg;base64,' . $carro['imagen'] . '">
+                        <div class="contenedor__imagen">
+                            <img height="200px" src="data:image/jpg;base64,' . $carro['imagen'] . '">
+                        </div>
                         <div class="separacion">
                             <p class="modelito"> Modelo </p>
-                            <h2>' . $carro['nombre'] . '</h2>
+                            <h2 class="carro__nombre">' . $carro['nombre'] . '</h2>
                             <h3 class="marca-carro">' . $carro['marca'] . '</h3>
                         </div>
                         <p class="carro-descripcion">' . $carro['descripcion'] . '</p>
-                        <div class="buttons">
-                            <form action="../recursos/api_testdrive.php" method="post">
-                                <input type="text" name="key" value="'.$key.'" style="display: none;">
-                                <button class="test" type="submit" name="id" value="'. $carro['id'] .'">Test Drive</button>
-                            </form>
-                            <form action="../api.php" method="post">
-                                <input type="text" name="resource" value="favoritos" style="display:none;">
-                                <input type="text" name="service" value="add" style="display:none;">
-                                <button class="fav" type="submit" name="id" value="'. $carro['id'] .'">Favorito</button>
-                            </form>
+                    ';   
+                    if(isset($_SESSION['id_usuario'])){
+                        $listaDeCarros .= '
+                            <div class="buttons">
+                                <form action="../recursos/api_testdrive.php" method="post">
+                                    <input type="text" name="key" value="'.$key.'" style="display: none;">
+                                    <button class="test" type="submit" name="id" value="'. $carro['id_carro'] .'">Test Drive</button>
+                                </form>
+                                <form action="../api.php" method="post">
+                                    <input type="text" name="resource" value="favoritos" style="display:none;">
+                                    <input type="text" name="service" value="add" style="display:none;">
+                                    <button class="fav" type="submit" name="id" value="'. $carro['id_carro'] .'">Favorito</button>
+                                </form>
+                            </div>
+                        ';
+                    }
+                    $listaDeCarros .= '
                         </div>
-                    </div>';
-            }
-        } else {
-            $contenedorDatos .= '<p>No hay registros</p>';
-        }
-    
-        $contenedorDatos .= '</div>';
-        echo $contenedorDatos;
-    } else {
-        echo 'Error al obtener datos de la API';
-    }
+                    ';
+                ?>
 
-    
-    ?>
-
+           <?php } 
+                $listaDeCarros .= '</div>' ;
+                    echo $listaDeCarros;
+                ?>
+      <?php  } else { 
+                echo '
+                    <div class="contenedor__empty">
+                        <h2>No se han encontrado datos</h2>
+                    </div>
+                '
+            ?>
+        <?php } ?>
+    <?php } else { 
+                echo '
+                <div class="contenedor__error__api">
+                    <h2>La API no ha envidado datos</h2>
+                </div>
+            '
+            ?>
+       <?php } ?>
 </body>
 </html>

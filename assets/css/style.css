@@ -268,96 +268,90 @@ body{
 }
 
 /* Registrarse */
-.contenedorR{
-    position: absolute;
-    flex-direction: row;
-    align-items: center;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    font-family: "Roboto-Black", Helvetica;
-    font-weight: 700;
 
-}
-
-.bienvenidos {
-    position: absolute;
-    margin-left: 550px;
-    font-size: 32px;
-
-}
-
-.div{
-    border-color: #F5B60F;
-    border: 1px;
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    align-self: stretch;
-    color: #fff;
-    margin-bottom: 8px;
-    position: relative;
-}
-.input{
-    position: relative;
-    align-self: stretch;
-    width: 100%;
-    height: 46px;
-    background-color: #ffffff;
-    border-radius: 13px;
-    border: 1px solid;
-    flex-direction: column;
-    display: flex;
-    border-color: #8e8e8e;
-}
-
-.contenedorF{
-    width: 300px;
-}
-
-.boton{
-    margin-top: 24px;
-    font-size: 24px;
-    margin-bottom: 20px;
-    padding: 8px 48px;
-    background-color: #F5B60F;
-    color: black;
+.test:hover{
+    background-color: #1c1900;
+    height: 32px;
     border-radius: 16px;
-    text-decoration: none;
+    border: 0.5px solid #8e8e8e;
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
-    text-align: center;
+    color: #ffffff;
+}
+
+.fav{
+    color: #F5B60F;
     width: 100%;
-}
-
-.login{
-    font-size: 32px;
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid #F5B60F;
+    background-color: #ffffff;
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
-    margin-top: 24px;
-    margin-bottom: 24px;
-    text-align: left;
-    color: #F5B60F;
-}
-
-.label{
-    margin-bottom: 8px;
-}
-
-.bloque{
-    position: absolute;
-    /* margin-top: 100px;*/
-    border: solid 1px #F5B60F;
-    width: 3px;
-    height: 410px;
-    color: #F5B60F;
+} 
+.fav:hover{
+    color: #ffffff;
+    width: 100%;
+    height: 32px;
+    border-radius: 16px;
+    border: 1px solid #F5B60F;
     background-color: #F5B60F;
-    margin-left: 350px;
-}
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+} 
+
+/* Favorite Cars page */
 
 /* Cars View */
+.alerta{
+    width: 48px;
+    height: 48px;
+}
+
+.alertMessage {
+    padding: 20px;
+    width: 75%;
+    font-size: 20px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: rgb(0 0 0 / 25%) 0px 5px 10px 2px;
+}
+
+.closeBtn {
+    float: right;
+    margin-left: 18px;
+    font-size: 30px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.sesion-mensaje{
+    margin-left: 80px;
+    margin-right: 80px;
+    padding: 8px 24px;
+    background-color: #ffffff;
+    border-left: 16px solid #F5B60F;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.mensaje-info{
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    font-family: "Roboto-Black", Helvetica;
+}
+.mensaje-info h4{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.mensaje{
+    margin-top: 0px;
+}
+
 .encabezado{
     margin-left: 80px;
     margin-right: 80px;
