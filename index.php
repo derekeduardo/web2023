@@ -74,13 +74,36 @@
 
 
     <!-- Ultimo Favorito -->
-    <br>
+    <?php 
+        if(isset($_COOKIE['id_usuario']) && isset($_SESSION['id_usuario'])){
+            if($_COOKIE['id_usuario'] == $_SESSION['id_usuario']){
+                echo '
+                <div class=\"cookie_container\">
+                    
+                    <div class=\"cookie__icono\">
+                        <h1>ICONO</h1>
+                    </div>
+
+                    <div class=\"cookie__info\">
+                        <h3 class=\"cookie__info__nombre\">'.$_COOKIE['nombre'].'</h3>
+                        <spam class=\"cookie__info__marca\">'.$_COOKIE['marca'].'</spam>
+                        <p class=\"cookie__info__descripcion\">'.$_COOKIE['descripcion'].'</p>
+                    </div>
+                
+                </div>
+            ';
+            }
+        }
+    ?>
+
+
+    <!-- <br>
     <?php
         if(isset($_SESSION['id_usuario'])){
             echo '<a href="./views/favoritos.php">Favoritos</a>';
         };
     ?>
-    <br>
+    <br> -->
 
 
     </body>

@@ -64,10 +64,10 @@ class FavoritosServicio{
         $stmt->close();
         $con->close();
 
-        $ultimoFavorito = json_encode($row);
-        setcookie("ultimo_favorito", $ultimoFavorito, time() + 1800, "/"); // 30 min
-        // http_response_code(201);
-        // echo json_encode(['message' => 'Se ha creado un nuevo recurso en el sistema (Favorito + Cookie)']);
+        setcookie("id_usuario", $id_usuario, time() + 1800, "/");
+        setcookie("nombre", $row['nombre'], time() + 1800, "/");
+        setcookie("marca", $row['marca'], time() + 1800, "/");
+        setcookie("descripcion", $row['descripcion'], time() + 1800, "/"); 
         header("Location: http://localhost/semestral%202023/views/v_favoritos.php?alert=v_create");
     }
 
@@ -93,6 +93,10 @@ class FavoritosServicio{
 
         if($resultado)
         {
+            setcookie("id_usuario", '', time() - 3600, "/");
+            setcookie("nombre", '', time() - 3600, "/");
+            setcookie("marca", '', time() - 3600, "/");
+            setcookie("descripcion", '', time() - 3600, "/");
             header("Location: http://localhost/semestral%202023/views/v_favoritos.php?alert=reg_not_exist");
         }else{
             echo 'Ha ocurrido un error durante el proceso de eliminación' . $stmt -> error;
