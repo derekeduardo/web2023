@@ -14,18 +14,14 @@
         <div class="logo"> 
             <h1>F&F</h1>
         </div>
-    
+
         <div class="navlink">
             <a href="about.html">About</a>
             <a href="servicios.html">Services</a>
-            <a href="favoritos.php">Favoritos</a>
         </div>
 
         <div class="autorizacion">
-            <a href="./views/login.php">Iniciar sesión</a>
-            <a href="./views/registro.php">Registrarse</a>
-            <!-- <a href="./views/perfil.php">Perfil</a>
-            <a href="./services/logout.php">Logout</a> -->
+            <a href="../index.php">Volver al Catalogo ></a>
         </div>
     </nav>
 

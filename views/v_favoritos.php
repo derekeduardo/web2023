@@ -1,8 +1,34 @@
 <?php include './components/session.php'?>
 
-<div>
-    <h2>AQUÍ FALTA AÑADIR EL NAV</h2>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title_info ?></title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo"> 
+            <h1>F&F</h1>
+        </div>
+    
+        <div class="navlink">
+            <a href="about.html">About</a>
+            <a href="servicios.html">Services</a>
+            <a href="contactos.html">Contacts</a>
+        </div>
+
+        <div class="autorizacion">
+            <a href="./views/login.php">Iniciar sesión</a>
+            <a href="./views/registro.php">Registrarse</a>
+            <!-- <a href="./views/perfil.php">Perfil</a>
+            <a href="./services/logout.php">Logout</a> -->
+        </div>
+    </nav>
 
     <?php 
     // Hacer la solicitud a la API
@@ -45,7 +71,7 @@
         echo 'Error al obtener datos de la API';
     }
     ?>
-
-<div>
-    <h2>AQUÍ FALTA AÑADIR EL FOOTER</h2>
-</div>
+    
+</body>
+<footer></footer>
+</html>

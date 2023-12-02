@@ -17,6 +17,13 @@ body{
     font-weight: 700;
 }
 
+.logo a{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+}
+
 .navlink a{
     list-style: none;
     margin-right: 30px; /* Agregado para espaciar los elementos de la lista */
@@ -261,6 +268,94 @@ body{
 }
 
 /* Registrarse */
+.contenedorR{
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+
+}
+
+.bienvenidos {
+    position: absolute;
+    margin-left: 550px;
+    font-size: 32px;
+
+}
+
+.div{
+    border-color: #F5B60F;
+    border: 1px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    color: #fff;
+    margin-bottom: 8px;
+    position: relative;
+}
+.input{
+    position: relative;
+    align-self: stretch;
+    width: 100%;
+    height: 46px;
+    background-color: #ffffff;
+    border-radius: 13px;
+    border: 1px solid;
+    flex-direction: column;
+    display: flex;
+    border-color: #8e8e8e;
+}
+
+.contenedorF{
+    width: 300px;
+}
+
+.boton{
+    margin-top: 24px;
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 8px 48px;
+    background-color: #F5B60F;
+    color: black;
+    border-radius: 16px;
+    text-decoration: none;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+}
+
+.login{
+    font-size: 32px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+    color: #F5B60F;
+}
+
+.label{
+    margin-bottom: 8px;
+}
+
+.bloque{
+    position: absolute;
+    /* margin-top: 100px;*/
+    border: solid 1px #F5B60F;
+    width: 3px;
+    height: 410px;
+    color: #F5B60F;
+    background-color: #F5B60F;
+    margin-left: 350px;
+}
 
 /* Cars View */
 .encabezado{
@@ -370,3 +465,6 @@ hr{
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
 } 
+
+/* Favorite Cars page */
+
