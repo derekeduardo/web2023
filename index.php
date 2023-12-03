@@ -23,7 +23,7 @@
             </div>
 
             <div class="autorizacion">
-                <a href="./views/perfil.php">Perfil</a>
+                <a href="./views/usuario/editar_usuario.php">Perfil</a>
                 <a href="./backup/logout.php">Logout</a> 
             </div>
         </nav>
