@@ -10,7 +10,7 @@ if($user == null || $user == ''){
 
 $id_user = $_SESSION['id_usuario'];
 // Conectar a la base de datos 
-require_once('../../db/configbd.php'); 
+require_once('../db/configbd.php'); 
 $conexion = conectarDB();
 $consulta = "SELECT * FROM usuarios WHERE id_usuario='$id_user'";
 $resultado = mysqli_query($conexion, $consulta);

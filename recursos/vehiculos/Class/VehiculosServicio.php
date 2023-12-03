@@ -104,6 +104,31 @@ class VehiculosServicio{
         echo json_encode($response, JSON_PRETTY_PRINT);
     }
 
+    public function deleteVehicle($id_carro){
+        
+        $con = $this->db->getConnection();
+        session_start();
+
+        $sql = 'DELETE FROM carros WHERE id_carro = ?';
+
+        $stmt = $con -> prepare($sql);
+        $stmt -> bind_param('i', $id_carro);
+        $stmt -> execute();
+
+        $result = $stmt -> affected_rows;
+
+        $response = [];
+        if(!$result){
+            http_response_code(500);
+            $response['message'] = 'Ha ocurrido un error interno de servidor';
+        }else{
+            $response['message'] = 'El vehículo se ha eliminado con éxito';
+        }
+
+        $stmt -> close();
+        $con -> close();
+    }
+
 
 
 
