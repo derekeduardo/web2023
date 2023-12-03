@@ -10,24 +10,41 @@
 </head>
 <body>    
     <!-- navbar -->
-    <nav class="navbar">
-        <div class="logo"> 
-            <h1>F&F</h1>
-        </div>
-    
-        <div class="navlink">
-            <a href="about.html">About</a>
-            <a href="servicios.html">Services</a>
-            <a href="contactos.html">Contacts</a>
-        </div>
+    <?php if(isset($_SESSION['id_usuario'])) { ?>
+        <nav class="navbar">
+            <div class="logo"> 
+                <a href="index.php"> <h1>F&F</h1> </a>
+            </div>
+        
+            <div class="navlink">
+                <a href="about.html">About</a>
+                <a href="servicios.html">Services</a>
+                <a href="./views/v_favoritos.php">Favoritos</a>
+            </div>
 
-        <div class="autorizacion">
-            <a href="./views/login.php">Iniciar sesión</a>
-            <a href="./views/registro.php">Registrarse</a>
-            <!-- <a href="./views/perfil.php">Perfil</a>
-            <a href="./services/logout.php">Logout</a> -->
-        </div>
-    </nav>
+            <div class="autorizacion">
+                <a href="./views/perfil.php">Perfil</a>
+                <a href="./backup/logout.php">Logout</a> 
+            </div>
+        </nav>
+    <?php } else { ?>
+        <nav class="navbar">
+            <div class="logo"> 
+                <h1>F&F</h1>
+            </div>
+        
+            <div class="navlink">
+                <a href="about.html">About</a>
+                <a href="servicios.html">Services</a>
+            </div>
+
+            <div class="autorizacion">
+                <a href="./views/login.php">Iniciar sesión</a>
+                <a href="./views/registro.php">Registrarse</a>
+            </div>
+        </nav>
+    <?php } ?>
+
 
     <!-- img de contenido -->
     <div class="contenedor">

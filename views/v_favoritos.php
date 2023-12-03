@@ -73,6 +73,7 @@
     echo 'Error al obtener datos de la API';
     }
     ?>
-
+    
 </body>
+<footer></footer>
 </html>
