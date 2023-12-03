@@ -54,8 +54,10 @@
                     <option value="jeep">Jeep</option>
                     <option value="lexus">Lexus</option>
                 </select><br><br>
-            <label>Descripción del auto:</label>
-            <input type="text" name="descripcion"><br><br>
+            <div>
+                <label>Descripción del auto:</label><br>
+                <textarea name="descripcion" cols="30" rows="10"></textarea>
+            </div><br>
             <label>Imagen del vehiculo:</label>
             <input type="file" name="imagen"><br><br>
 

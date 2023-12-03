@@ -74,6 +74,36 @@ class VehiculosServicio{
         echo json_encode($response, JSON_PRETTY_PRINT);
     }
 
+    public function getListOfAllVehicles(){
+        header("Content-Type: application/json");
+        $con = $this->db->getConnection();
+
+        $sql = 'SELECT id_carro, nombre, marca, descripcion FROM carros';
+
+        $stmt = $con -> prepare($sql);
+        $stmt -> execute();
+
+        $result = $stmt -> get_result();
+
+        $response = [];
+        if(!$result){
+            http_response_code(500);
+            $response['message'] = 'Ha ocurrido un error interno de servidor';
+        }
+
+        while($row = $result->fetch_assoc()){
+
+            $response[] = $row;
+
+        }
+
+        $stmt -> close();
+        $con -> close();
+
+        http_response_code(200);
+        echo json_encode($response, JSON_PRETTY_PRINT);
+    }
+
 
 
 
