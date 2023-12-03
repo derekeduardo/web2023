@@ -19,12 +19,12 @@
             <div class="navlink">
                 <a href="about.html">About</a>
                 <a href="servicios.html">Services</a>
-                <a href="./views/v_favoritos.php">Favoritos</a>
+                <a href="./v_favoritos.php">Favoritos</a>
             </div>
 
             <div class="autorizacion">
                 <a href="./views/perfil.php">Perfil</a>
-                <a href="./backup/logout.php">Logout</a> 
+                <a href="./../recursos/usuarios/services/logout.php">Logout</a> 
             </div>
         </nav>
     <?php } else { ?>

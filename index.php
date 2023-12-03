@@ -24,7 +24,7 @@
 
             <div class="autorizacion">
                 <a href="./views/usuario/editar_usuario.php">Perfil</a>
-                <a href="./backup/logout.php">Logout</a> 
+                <a href="./recursos/usuarios/services/logout.php/logout.php">Logout</a> 
             </div>
         </nav>
     <?php } else { ?>
