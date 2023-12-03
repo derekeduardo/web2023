@@ -294,7 +294,7 @@ body{
 .banner-text {
     position: absolute;
     top: 50%;
-    right: 5%; /* Ajusta el valor para posicionar el texto */
+    right: 5%; 
     transform: translate(0%, -50%);
     font-size: 24px;
     text-align: right;
@@ -306,8 +306,8 @@ body{
 
 .button-container {
     position: absolute;
-    top: 60%; /* Ajusta la posición vertical del botón */
-    right: 5%; /* Ajusta el valor para posicionar el botón */
+    top: 60%; 
+    right: 5%; 
 }
 
 /* Estilos para el botón */
@@ -341,8 +341,8 @@ body{
 }
 
 .person {
-    width: calc(40% - 10%); /* Se establece el ancho del 40% para cada persona, restando el espacio entre ellas */
-    background-color: #333; /* Color de fondo opcional */
+    width: calc(40% - 10%); 
+    background-color: #333; /* Color de fondo opcional pero quedo bonito x2 */
     padding: 20px;
     border-radius: 5px;
     box-sizing: border-box;
@@ -359,8 +359,8 @@ body{
 }
 
 .personx {
-    width: calc(40% - 10%); /* Se establece el ancho del 40% para cada persona, restando el espacio entre ellas */
-    background-color: #333; /* Color de fondo opcional */
+    width: calc(40% - 10%); 
+    background-color: #333; /* Color de fondo opcional pero quedo bonito*/
     padding: 20px;
     border-radius: 5px;
     box-sizing: border-box;
