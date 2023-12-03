@@ -20,6 +20,10 @@
             case 'logout':
                 include 'services/logout.php';
             break;
+
+            case 'edit':
+                include 'services/edit.php';
+            break;
                 
             default:
                 http_response_code(400);
