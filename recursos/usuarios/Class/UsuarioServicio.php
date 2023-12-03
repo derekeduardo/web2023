@@ -19,7 +19,11 @@ class UsuarioServicio{
             $_SESSION['pass'] = $userData['pass'];
             $_SESSION['email'] = $userData['email'];
 
-            header("Location: http://localhost/semestral%202023/index.php");
+            if($userData['rol'] === 'admin'){
+                header("Location: http://localhost/semestral%202023/views/admin/dashboard.php");
+            }else{
+                header("Location: http://localhost/semestral%202023/index.php"); 
+            }
             $con -> close();
         }else{
             header("Location: http://localhost/semestral%202023/views/login.php?alert=1");
