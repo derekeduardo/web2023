@@ -194,7 +194,17 @@ body{
 /* Inicio de sesión */
 
 
-
+.contenedorRL{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-self: stretch;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    
+}
 .contenedorL{
     position: absolute;
     flex-direction: row;
@@ -204,17 +214,12 @@ body{
     justify-content: center;
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
-
 }
 
 .bienvenido{
     margin-right: 48px;
 }
 
-.div{
-    border-color: #F5B60F;
-    border: 1px;
-}
 
 .form{
     display: flex;
@@ -269,36 +274,108 @@ body{
 
 /* Registrarse */
 
-.test:hover{
-    background-color: #1c1900;
-    height: 32px;
-    border-radius: 16px;
-    border: 0.5px solid #8e8e8e;
+.contenedorR{
+    position: absolute;
+    flex-direction: row;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
-    color: #ffffff;
 }
 
-.fav{
-    color: #F5B60F;
+.bienvenidos {
+    position: absolute;
+    margin-left: 700px;
+    font-size: 32px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    color: #fff;
+    margin-bottom: 8px;
+    position: relative;
+}
+.input{
+    position: relative;
+    align-self: stretch;
     width: 100%;
-    height: 32px;
-    border-radius: 16px;
-    border: 1px solid #F5B60F;
+    height: 46px;
     background-color: #ffffff;
-    font-family: "Roboto-Black", Helvetica;
-    font-weight: 700;
-} 
-.fav:hover{
-    color: #ffffff;
-    width: 100%;
-    height: 32px;
-    border-radius: 16px;
-    border: 1px solid #F5B60F;
+    border-radius: 13px;
+    border: 1px solid;
+    flex-direction: column;
+    display: flex;
+    border-color: #8e8e8e;
+}
+
+.contenedorF{
+    width: 300px;
+    margin-right: 32px;
+    margin-left: 80px;
+}
+
+.contenedorFO{
+    width: 300px;
+    margin-right: 32px;
+    margin-left: 80px;
+}
+
+.boton{
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 8px 48px;
     background-color: #F5B60F;
+    color: black;
+    border-radius: 16px;
+    text-decoration: none;
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
-} 
+    text-align: center;
+    width: 100%;
+}
+
+.login{
+    font-size: 32px;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    text-align: left;
+    color: #F5B60F;
+}
+
+.label{
+    margin-bottom: 8px;
+}
+
+.bloque{
+    position: absolute;
+    /* margin-top: 100px;*/
+    border: solid 1px #F5B60F;
+    width: 3px;
+    height: 410px;
+    color: #F5B60F;
+    background-color: #F5B60F;
+    margin-left: 432px;
+}
+.bloqueR{
+    position: absolute;
+    /* margin-top: 100px;*/
+    border: solid 1px #F5B60F;
+    width: 3px;
+    height: 410px;
+    color: #F5B60F;
+    background-color: #F5B60F;
+    margin-right: 32px;
+}
+
+.separador{
+    margin-bottom: 0px;
+}
 
 /* Favorite Cars page */
 
@@ -393,6 +470,12 @@ hr{
     gap: 4px;
 }
 
+.separacionL {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+}
+
 .separacion p, .separacion h2, .separacion h3 {
     margin: 0; /* Reset default margin for some elements */
 }
@@ -416,7 +499,6 @@ hr{
     display: flex;
     flex-direction: column;
     gap: 8px;
-    margin-top: 32px;
 }
 
 .test{

@@ -19,6 +19,7 @@
             <div class="navlink">
                 <a href="about.html">About</a>
                 <a href="servicios.html">Services</a>
+                <a href="./views/v_favoritos.php">Favoritos</a>
             </div>
 
             <div class="autorizacion">
@@ -35,7 +36,6 @@
             <div class="navlink">
                 <a href="about.html">About</a>
                 <a href="servicios.html">Services</a>
-                <a href="./views/v_favoritos.php">Favoritos</a>
             </div>
 
             <div class="autorizacion">
