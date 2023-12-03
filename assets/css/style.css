@@ -403,7 +403,6 @@ body{
     transition: 0.4s;
 }
 
-<<<<<<< HEAD
 /* About */
 
 
@@ -418,8 +417,9 @@ body{
     top: 50%;
     right: 5%; 
     transform: translate(0%, -50%);
-    font-size: 24px;
+    font-size: 20px;
     text-align: right;
+    font-family: "Roboto-Black", Helvetica;
 }
 
 .texth1 {
@@ -447,8 +447,10 @@ body{
     text-align: center;
     margin-top: 50px;
     color: #ffffff;
-    font-size: large;
+    font-family: "Roboto-Black", Helvetica;
 }
+
+
 
 .project-section h3,
 .about-us-section h3 {
@@ -460,6 +462,7 @@ body{
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
+    font-family: "Roboto-Black", Helvetica;
 }
 
 .person {
@@ -470,6 +473,7 @@ body{
     box-sizing: border-box;
     text-align: center;
     color: white;
+    font-family: "Roboto-Black", Helvetica;
 }
 
 .persons-container2 {
@@ -488,9 +492,20 @@ body{
     box-sizing: border-box;
     text-align: center;
     color: white;
+    font-family: "Roboto-Black", Helvetica;
 
 }
-=======
+.project-section p{
+ text-align: justify;
+ padding-right: 62px;
+ padding-left: 62px;
+}
+
+.project-section h3 {
+font-size: 24px;
+
+}
+
 .sesion-mensaje{
     margin-left: 80px;
     margin-right: 80px;
@@ -632,4 +647,4 @@ hr{
 
 /* Favorite Cars page */
 
->>>>>>> dafd9e83f907f8d17ef0a3ef91d328f790414d2d
+
