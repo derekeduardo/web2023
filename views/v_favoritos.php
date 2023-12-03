@@ -25,7 +25,6 @@
         <div>
 
             <div class="alertMessage">
-                <span class="closeBtn" onclick="this.parentElement.style.display='none';">×</span>
                 <strong><?php $title ?></strong> <?php $message?>
             </div>
 
@@ -57,9 +56,10 @@
                     <input type="text" name="service" value="delete" style="display:none;">
                     <button type="submit" name="id" value="'. $carro['id_carro'] .'">Quitar Favorito</button>
                     </form>
-                    <form action="#" method="get">
-                        <button type="submit" value="'. $carro['id_carro'] .'">Test Drive</button>
-                    </form>
+                    <form action="../recursos/api_testdrive.php" method="post">
+                    <input type="text" name="key" value="'.$key.'" style="display: none;">
+                    <button type="submit" name="id" value="'. $carro['id_carro'] .'">Test Drive</button>
+                </form>
                 </div>
             </div>';
     }
@@ -73,6 +73,7 @@
     echo 'Error al obtener datos de la API';
     }
     ?>
-
+    
 </body>
+<footer></footer>
 </html>

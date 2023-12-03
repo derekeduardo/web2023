@@ -20,6 +20,9 @@
             case 'delete_vehicle':
                 include 'services/delete_vehicle.php';
             break;
+            
+            case 'get_all_vehicles':
+                include 'services/get_all_vehicles.php';
 
             default:
                 http_response_code(400);

@@ -35,8 +35,6 @@ class FavoritosServicio{
         {
             $this->createCookie($dato1, $dato2);
         }else{
-            // http_response_code(500);
-            // echo json_encode(['message' => 'Ha ocurrido un error al momento de guardar la data' . $con -> error]);
             echo 'Ha ocurrido un error al momento de guardar la información';
             $con -> close();
         }    

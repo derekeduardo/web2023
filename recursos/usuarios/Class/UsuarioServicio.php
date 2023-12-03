@@ -16,7 +16,14 @@ class UsuarioServicio{
             $_SESSION['user'] = $userData['username'];
             $_SESSION['id_usuario'] = $userData['id'];
             $_SESSION['rol'] = $userData['rol'];
-            header("Location: http://localhost/semestral%202023/index.php");
+            $_SESSION['pass'] = $userData['pass'];
+            $_SESSION['email'] = $userData['email'];
+
+            if($userData['rol'] === 'admin'){
+                header("Location: http://localhost/semestral%202023/views/admin/dashboard.php");
+            }else{
+                header("Location: http://localhost/semestral%202023/index.php"); 
+            }
             $con -> close();
         }else{
             header("Location: http://localhost/semestral%202023/views/login.php?alert=1");
@@ -25,23 +32,72 @@ class UsuarioServicio{
         exit();
     }
 
+    public function editUserData($new_info, $column){
+        session_start();
+        $con = $this->db->getConnection();
+
+
+        if($column == 'usuario'){
+            if($this->getUser(trim($new_info))){
+                header("Location: http://localhost/semestral%202023/views/usuario/editar_usuario.php?alert=u_exist");
+                $con->close();
+                exit();
+            }
+        }
+
+        $sql = 'UPDATE usuarios SET '.$column.'= ? WHERE id_usuario = ?';
+        
+        $stmt = $con->prepare($sql);
+        $stmt->bind_param('ss', trim($new_info), $_SESSION['id_usuario']);
+
+        if($stmt->execute()){
+
+            switch($column){
+                case 'usuario':
+                    $_SESSION['user'] = trim($new_info);
+                break;
+
+                case 'correo':
+                    $_SESSION['email'] = trim($new_info);
+                break;
+
+                case 'contrasena':
+                    $_SESSION['pass'] = trim($new_info);
+                break;
+
+                default:
+                    echo 'Un error muy curioso la verdad';
+                break;
+            }
+
+            header("Location: http://localhost/semestral%202023/views/usuario/editar_usuario.php?alert=u_edit");
+            exit();
+        }else{
+            echo 'Al parecer ha ocurrido un error interno de servidor' . $stmt -> error;
+        }
+
+        $stmt -> close();
+        $con -> close();
+    }
+
     public function getCredentials($username){
 
         $con = $this->db->getConnection();
 
-        $sql = 'SELECT id_usuario, usuario, rol, contrasena FROM usuarios WHERE usuario = ?';
+        $sql = 'SELECT id_usuario, usuario, rol, contrasena, correo FROM usuarios WHERE usuario = ?';
 
         $stmt = $con->prepare($sql);
         $stmt->bind_param('s', $username);
         $stmt->execute();
-        $stmt->bind_result($id_usuario, $user, $rol, $contrasena);
+        $stmt->bind_result($id_usuario, $user, $rol, $contrasena, $correo);
         
         if($stmt->fetch()){
             $user_data = array(
                 'id' => $id_usuario,
                 'username' => $user,
                 'rol' => $rol,
-                'pass' => $contrasena
+                'pass' => $contrasena,
+                'email' => $correo
             );
             $stmt -> close();
             return $user_data;
