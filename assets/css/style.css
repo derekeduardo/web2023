@@ -654,6 +654,7 @@ hr{
     margin-left: 80px;
     margin-right: 80px;
     align-items: center; /* Centra verticalmente los elementos */
+    margin-bottom: 32px;
     
 }
 
@@ -724,6 +725,7 @@ hr{
     padding: 0px 48px;
     margin: 0px 16px;
 } 
+
 .favoritoB:hover{
     color: #ffffff;
     width: 100%;
