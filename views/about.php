@@ -39,17 +39,16 @@
             <button>Ver más</button>
         </div>
     </div>
-    </div>
+   
     <div class="project-section">
         <h3>Sobre nuestro proyecto</h3>
-        <p>Bienvenido a nuestra agencia de automóviles, donde encontrar tu vehículo ideal es fácil y personalizado. Agrega tus opciones favoritas,
-        programa un test drive y gestiona tu cuenta desde cualquier lugar. Además, nuestros administradores tienen una 
-          vista completa de los autos, registros y la capacidad de mantener la información actualizada.
+        <p>¡Te damos la bienvenida a nuestra agencia de automóviles, donde encontrar el coche perfecto es sencillo y personalizado! En nuestra plataforma, puedes seleccionar tus coches favoritos, agendar pruebas de manejo y gestionar tu cuenta de manera intuitiva.
 
-        Descubre la experiencia sin complicaciones de elegir tu próximo automóvil con nosotros. ¡Bienvenido a una forma más inteligente de comprar un coche!</p>
+Con solo unos clics, añade a tus favoritos los modelos que más te encanten y agenda un test drive para asegurarte de que sea la elección ideal. Además, dentro de tu cuenta, tienes control total para gestionar tus datos y actualizar tus preferencias en cualquier momento.
+
+Nuestros administradores cuentan con herramientas especiales para mantener la plataforma actualizada y relevante. Ellos tienen acceso a toda la información de los vehículos, registros y la capacidad de mantener la base de datos al día.</p>
     </div>
-
-   <!-- ... Tu código HTML anterior ... -->
+    <br>
 
 <!-- Título "Sobre nosotros" -->
 <div class="about-us-section">
