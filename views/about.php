@@ -10,24 +10,40 @@
 </head>
 <body>    
     <!-- navbar -->
-    <nav class="navbar">
-        <div class="logo"> 
-            <h1>F&F</h1>
-        </div>
-    
-        <div class="navlink">
-            <a href="about.html">About</a>
-            <a href="servicios.html">Services</a>
-            <a href="contactos.html">Contacts</a>
-        </div>
+    <?php if(isset($_SESSION['id_usuario'])) { ?>
+        <nav class="navbar">
+            <div class="logo"> 
+                <a href="../index.php"> <h1>F&F</h1> </a>
+            </div>
+        
+            <div class="navlink">
+                <a href="about.php">About</a>
+                <a href="servicios.html">Services</a>
+                <a href="./v_favoritos.php">Favoritos</a>
+            </div>
 
-        <div class="autorizacion">
-            <a href="./views/login.php">Iniciar sesión</a>
-            <a href="./views/registro.php">Registrarse</a>
-            <!-- <a href="./views/perfil.php">Perfil</a>
-            <a href="./services/logout.php">Logout</a> -->
-        </div>
-    </nav>  
+            <div class="autorizacion">
+                <a href="./views/perfil.php">Perfil</a>
+                <a href="./../recursos/usuarios/services/logout.php">Logout</a> 
+            </div>
+        </nav>
+    <?php } else { ?>
+        <nav class="navbar">
+            <div class="logo"> 
+                <a href="../index.php"><h1>F&F</h1></a>
+            </div>
+        
+            <div class="navlink">
+                <a href="about.php">About</a>
+                <a href="servicios.html">Services</a>
+            </div>
+
+            <div class="autorizacion">
+                <a href="login.php">Iniciar sesión</a>
+                <a href="registro.php">Registrarse</a>
+            </div>
+        </nav>
+    <?php } ?>
 
     <div class="banner-container">
         <img src="../assets/Diseño sin título.png" alt="Banner Image" style="width: 100%; height: auto;">
@@ -43,10 +59,9 @@
     <div class="project-section">
         <h3>Sobre nuestro proyecto</h3>
         <p>¡Te damos la bienvenida a nuestra agencia de automóviles, donde encontrar el coche perfecto es sencillo y personalizado! En nuestra plataforma, puedes seleccionar tus coches favoritos, agendar pruebas de manejo y gestionar tu cuenta de manera intuitiva.
-
-Con solo unos clics, añade a tus favoritos los modelos que más te encanten y agenda un test drive para asegurarte de que sea la elección ideal. Además, dentro de tu cuenta, tienes control total para gestionar tus datos y actualizar tus preferencias en cualquier momento.
-
-Nuestros administradores cuentan con herramientas especiales para mantener la plataforma actualizada y relevante. Ellos tienen acceso a toda la información de los vehículos, registros y la capacidad de mantener la base de datos al día.</p>
+            Con solo unos clics, añade a tus favoritos los modelos que más te encanten y agenda un test drive para asegurarte de que sea la elección ideal. Además, dentro de tu cuenta, tienes control total para gestionar tus datos y actualizar tus preferencias en cualquier momento.
+            Nuestros administradores cuentan con herramientas especiales para mantener la plataforma actualizada y relevante. Ellos tienen acceso a toda la información de los vehículos, registros y la capacidad de mantener la base de datos al día.
+        </p>
     </div>
     <br>
 

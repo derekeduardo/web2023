@@ -17,13 +17,13 @@
             </div>
         
             <div class="navlink">
-                <a href="about.html">About</a>
+                <a href="./views/about.php">About</a>
                 <a href="servicios.html">Services</a>
                 <a href="./views/v_favoritos.php">Favoritos</a>
             </div>
 
             <div class="autorizacion">
-                <a href="./views/perfil.php">Perfil</a>
+                <a href="./views/usuario/editar_usuario.php">Perfil</a>
                 <a href="./backup/logout.php">Logout</a> 
             </div>
         </nav>
@@ -34,7 +34,7 @@
             </div>
         
             <div class="navlink">
-                <a href="about.html">About</a>
+                <a href="/views/about.php">About</a>
                 <a href="servicios.html">Services</a>
             </div>
 

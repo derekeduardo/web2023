@@ -736,3 +736,37 @@ hr{
     font-family: "Roboto-Black", Helvetica;
     font-weight: 700;
 } 
+
+/* Perfil */
+
+.invalid{
+    color: red;
+}
+
+.errorM {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.errorMu{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+.error__message__email{
+    display: none;
+    color: red;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.error__message__pass{
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

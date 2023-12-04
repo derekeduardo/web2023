@@ -17,14 +17,8 @@ $resultado = mysqli_query($conexion, $consulta);
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil</title>
-</head>
-<body>
+
+<?php } ?>
     <h3>Perfil</h3>
     <!--<form method="post" action="">-->
         <?php while($datos = mysqli_fetch_object($resultado)){ ?>
@@ -39,7 +33,3 @@ $resultado = mysqli_query($conexion, $consulta);
         <button type="button" name="boton1"><a href="../services/cambiar_clave.php">Cambiar constraseña</a></button>
         <button type="button" name="boton2"><a href="../index.php">Home</a></button>
     <!--</form>-->
-
-    
-</body>
-</html>
