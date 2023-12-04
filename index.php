@@ -23,8 +23,8 @@
             </div>
 
             <div class="autorizacion">
-                <a href="./views/usuario/editar_usuario.php">Perfil</a>
-                <a href="./recursos/usuarios/services/logout.php/logout.php">Logout</a> 
+                <a href="./views/perfil.php">Perfil</a>
+                <a href="./backup/logout.php">Logout</a> 
             </div>
         </nav>
     <?php } else { ?>
@@ -95,16 +95,19 @@
         if(isset($_COOKIE['id_usuario']) && isset($_SESSION['id_usuario'])){
             if($_COOKIE['id_usuario'] == $_SESSION['id_usuario']){
                 echo '
-                <div class=\"cookie_container\">
+                <div class="Ufavorito">
                     
-                    <div class=\"cookie__icono\">
-                        <h1>ICONO</h1>
+                    <div class="icono-car">
+                        <img class="img" src="./assets/icono-car.png">
                     </div>
 
-                    <div class=\"cookie__info\">
-                        <h3 class=\"cookie__info__nombre\">'.$_COOKIE['nombre'].'</h3>
-                        <spam class=\"cookie__info__marca\">'.$_COOKIE['marca'].'</spam>
-                        <p class=\"cookie__info__descripcion\">'.$_COOKIE['descripcion'].'</p>
+                    <div class="cookie__info">
+                        <div class="info_principal">
+                            <p class="modelito"> Último favorito </p>
+                            <h3 class="cookie__info__nombre">'.$_COOKIE['nombre'].'</h3>
+                            <span class="marca-carro">'.$_COOKIE['marca'].'</span>
+                        </div>
+                        <p class="carro-descripcion">'.$_COOKIE['descripcion'].'</p>
                     </div>
                 
                 </div>
@@ -112,6 +115,7 @@
             }
         }
     ?>
+
 
 
     <!-- <br>

@@ -1,3 +1,4 @@
+
 <?php include './components/session.php'?>
 
 <!DOCTYPE html>
@@ -6,9 +7,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
+
+    <!-- navbar -->
+    <?php if(isset($_SESSION['id_usuario'])) { ?>
+        <nav class="navbar">
+            <div class="logo"> 
+                <a href="../index.php"> <h1>F&F</h1> </a>
+            </div>
+        
+            <div class="navlink">
+                <a href="about.html">About</a>
+                <a href="servicios.html">Services</a>
+                <a href="./v_favoritos.php">Favoritos</a>
+            </div>
+
+            <div class="autorizacion">
+                <a href="./views/perfil.php">Perfil</a>
+                <a href="./../recursos/usuarios/services/logout.php">Logout</a> 
+            </div>
+        </nav>
+    <?php } else { ?>
+        <nav class="navbar">
+            <div class="logo"> 
+                <a href="../index.php"><h1>F&F</h1></a>
+            </div>
+        
+            <div class="navlink">
+                <a href="about.html">About</a>
+                <a href="servicios.html">Services</a>
+            </div>
+
+            <div class="autorizacion">
+                <a href="login.php">Iniciar sesión</a>
+                <a href="registro.php">Registrarse</a>
+            </div>
+        </nav>
+    <?php } ?>
+
+    <div> <img class="img" src="../assets/favoritos.png" alt=""></div>
+
+
     
     <?php   if(isset($_GET['alert'])){
 
@@ -43,28 +84,40 @@
     if (!empty($data)) {
     foreach ($data as $carro) {
         $contenedorDatos .= '
-            <div>
+            <div class="favorito">
                 <img height="200px" src="data:image/jpg;base64,' . $carro['imagen'] . '">
                 <div>
-                    <h2>' . $carro['nombre'] . '<r/h2>
-                    <h3>' . $carro['marca'] . '</h3>
-                    <p>' . $carro['descripcion'] . '</p>
+                    <div class="separacion">
+                        <p class="modelito"> Modelo </p>
+                        <h2>' . $carro['nombre'] . '<r/h2>
+                        <h3 class="marca-carro">' . $carro['marca'] . '</h3>
+                    </div>
+                    <p class="carro-descripcion">' . $carro['descripcion'] . '</p>
                 </div>
-                <div>
+                <div class="buttons">
                     <form action="../api.php" method="post">
                     <input type="text" name="resource" value="favoritos" style="display:none;">
                     <input type="text" name="service" value="delete" style="display:none;">
-                    <button type="submit" name="id" value="'. $carro['id_carro'] .'">Quitar Favorito</button>
+                    <button class="favoritoB" type="submit" name="id" value="'. $carro['id_carro'] .'">Quitar Favorito</button>
                     </form>
-                    <form action="../recursos/api_testdrive.php" method="post">
-                    <input type="text" name="key" value="'.$key.'" style="display: none;">
-                    <button type="submit" name="id" value="'. $carro['id_carro'] .'">Test Drive</button>
-                </form>
+                    <form action="#" method="get">
+                        <button class="test-drive" type="submit" value="'. $carro['id_carro'] .'">Test Drive</button>
+                    </form>
                 </div>
             </div>';
     }
     } else {
-    $contenedorDatos .= '<p>No hay registros</p>';
+    $contenedorDatos .= '<div class="sesion-mensaje">
+
+    <div class="sesion__mensaje__imagen">
+        <img class="alerta" src="../assets/Info.png">
+    </div>
+
+    <div class="mensaje-info">
+        <h4>Aun no haz añadido un favorito</h4>
+        <spam class="mensaje"> Encuentra tus carros favoritos en las marcas que puedes encontrar al fondo de nuestra <strong><a href="../index.php"> página principal</a></strong></spam>
+    </div>
+</div>';
     }
 
     $contenedorDatos .= '</div>';
