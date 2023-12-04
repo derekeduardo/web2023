@@ -21,8 +21,10 @@ class UsuarioServicio{
 
             if($userData['rol'] === 'admin'){
                 header("Location: http://localhost/semestral%202023/views/admin/dashboard.php");
-            }else{
+            }else if($userData['rol'] === 'user'){
                 header("Location: http://localhost/semestral%202023/index.php"); 
+            }else {
+                echo "No se ha podido iniciar sesión";
             }
             $con -> close();
         }else{

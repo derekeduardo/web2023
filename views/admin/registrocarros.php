@@ -1,7 +1,8 @@
 <?php
   require_once(__DIR__. '../../../recursos/connection/Database.php');
 
-  $db = Database::getInstance();
+  if(isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'POST'){
+    $db = Database::getInstance();
 
   $con = $db->getConnection();
    
@@ -29,8 +30,8 @@
         }
   }
       
-      
         $con->close();
+  }
     
 ?>
 
@@ -42,6 +43,8 @@
     <title>Registro Autos</title>
 </head>
 <body>
+  <?php include '../components/session.php' ?>
+    <?php if($_SESSION['rol'] === 'admin'){ ?>
     <center>
         <h1>Registro de Autos</h1>
 
@@ -68,5 +71,12 @@
 
         </form>
     </center>
+    <?php } else { ?>
+        <?php echo '<div>
+            <h1>No tiene las credenciales suficientes para utilizar este apartado</h1>
+            <a href="../../index.php">Volver</a>
+        </div>' ?>
+    <?php } ?> 
+    
 </body>
 </html>

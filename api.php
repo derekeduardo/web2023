@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' || $_SERVER['REQUEST_METHOD'] === 'GET'
         break;
 
         case 'testdrive':
-            include 'recursos/testdrive/usuario.php';
+            include 'recursos/testdrive/testdrive.php';
         break;
     
         default:

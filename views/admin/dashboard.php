@@ -10,7 +10,11 @@
 
     <?php session_start(); ?> 
 
-    <h1>Bienvenido <?php echo $_SESSION['user'] ?> 👨‍💻</h1>
+    <?php if($_SESSION['rol'] === 'admin'){ ?>
+
+
+
+        <h1>Bienvenido <?php echo $_SESSION['user'] ?> 👨‍💻</h1>
     
     <nav>
         <span>Dashboard</span>
@@ -63,6 +67,15 @@
         '
         ?>
     <?php } ?>
+
+        
+    
+    <?php } else { ?>
+        <?php echo '<div>
+            <h1>No tiene las credenciales suficientes para utilizar este apartado</h1>
+            <a href="../../index.php">Volver</a>
+        </div>' ?>
+    <?php } ?> 
 
 </body>
 </html>

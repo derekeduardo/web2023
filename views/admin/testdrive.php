@@ -1,7 +1,7 @@
 <!-- Añadier session.php para trabajar con la sesión del usuario
     Insertar el archivo link css
 -->
-<?php include __DIR__.'../components/session.php'?>
+<?php include __DIR__.'../../components/session.php'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,7 +43,7 @@
 <?php
 
 // Hacer la solicitud a la API
-$api_url = 'http://localhost/semestral%202023/recursos/admin/api_admintestdrive.php';
+$api_url = 'http://localhost/semestral%202023/api.php?resource=testdrive&service=get';
 $response = file_get_contents($api_url);
 
 if ($response !== false) {
