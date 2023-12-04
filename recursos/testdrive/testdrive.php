@@ -13,6 +13,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET'){
             include 'services/gettestdrive.php';
         break;
 
+        case 'insert':
+            include 'services/inserttestdrive.php';
+        break;
+
     
         default:
             http_response_code(400);

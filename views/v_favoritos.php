@@ -56,10 +56,11 @@
                     <input type="text" name="service" value="delete" style="display:none;">
                     <button type="submit" name="id" value="'. $carro['id_carro'] .'">Quitar Favorito</button>
                     </form>
-                    <form action="../recursos/api_testdrive.php" method="post">
-                    <input type="text" name="key" value="'.$key.'" style="display: none;">
+                    <form action="../api.php" method="post">
+                    <input type="text" name="resource" value="testdrive" style="display:none;">
+                    <input type="text" name="service" value="insert" style="display:none;">
                     <button type="submit" name="id" value="'. $carro['id_carro'] .'">Test Drive</button>
-                </form>
+                    </form>
                 </div>
             </div>';
     }
