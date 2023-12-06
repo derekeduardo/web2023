@@ -619,6 +619,15 @@ hr{
     font-weight: 700;
     color: #ffffff;
 }
+.test:disabled{
+    background-color: #a9a8a5;
+    height: 32px;
+    border-radius: 16px;
+    border: 0.5px solid #8e8e8e;
+    font-family: "Roboto-Black", Helvetica;
+    font-weight: 700;
+    color: #6f6e6e;
+}
 
 .fav{
     color: #F5B60F;
@@ -798,7 +807,15 @@ h1 {
 .contenidoU{
     font-size: 8px;
     position: absolute;
-    padding: 132.5px 80px ;
+    padding: 132.5px 132px ;
     flex-direction: row;
     text-align: left;
+    font-family: "Roboto-Black", Helvetica;
+}
+
+.label{
+    font-size: 16px;
+}
+label{
+    font-size: 14px;
 }

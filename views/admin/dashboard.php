@@ -54,7 +54,7 @@
                         <td>'.$elemento['descripcion'].'</td>
                         <td>
                             <form action="./../../recursos/vehiculos/services/delete_vehicle.php" method="post">
-                                <button type="submit" name="id" value="'.$elemento['id_carro'].'">Eliminar</button>
+                                <button class="boton2" type="submit" name="id" value="'.$elemento['id_carro'].'">Eliminar</button>
                             </form>
                         </td>
                     </tr>' ?>

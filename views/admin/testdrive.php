@@ -26,7 +26,7 @@
         </div>
     </nav>
 
-    <h1 class="title">TestDrive</h1>
+    <h1 class="title">Solicitudes de Test Drive</h1>
     <br>
 
     <!-- Contenedor para mostrar los datos de la API -->

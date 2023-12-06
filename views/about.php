@@ -71,28 +71,28 @@
     <!-- Contenedor para los párrafos de las 5 personas -->
     <div class="persons-container">
         <div class="person">
-            <h3>su nombre</h3>
-            <p>sobre ustedes</p>
+            <h3>Kathleen Antillón</h3>
+            <p>9-973-2082</p>
         </div>
         <div class="person">
-            <h3>su nombre</h3>
-            <p>sobre ustedes 2</p>
+            <h3>Derek Cardenas</h3>
+            <p>8-967-194</p>
         </div>
 
         <div class="person">
-            <h3>su nombre</h3>
-            <p>sobre ustedes 2</p>
+            <h3>Jorge Bethancourt</h3>
+            <p>8-965-2129</p>
         </div>
     </div>
 <div class="persons-container2">
     <div class="personx">
-            <h3>su nombre</h3>
-            <p>sobre ustedes</p>
+            <h3>Antonio Quijano</h3>
+            <p>8-908-1148</p>
         </div>
 
         <div class="personx">
-            <h3>su nombre</h3>
-            <p>sobre ustedes</p>
+            <h3>Cristofer Jimenez</h3>
+            <p>20-70-7100</p>
         </div>
 
     <div>
