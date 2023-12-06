@@ -25,7 +25,7 @@
             </div>
 
             <div class="autorizacion">
-                <a href="./views/perfil.php">Perfil</a>
+                <a href="./usuario/editar_usuario.php">Perfil</a>
                 <a href="./../recursos/usuarios/services/logout.php">Logout</a> 
             </div>
         </nav>

@@ -34,7 +34,7 @@
             </div>
         
             <div class="navlink">
-                <a href="/views/about.php">About</a>
+                <a href="./views/about.php">About</a>
                 <a href="servicios.html">Services</a>
             </div>
 

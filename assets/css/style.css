@@ -770,3 +770,35 @@ hr{
     font-size: 12px;
     margin-top: 5px;
 }
+
+.form__cambio {
+    background-color: #ffffff; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra para un aspecto más elevado */
+}
+
+.logo-grande {
+    width: 100px; /* Ajusta el tamaño de la imagen según tus necesidades */
+    margin-right: 20px; /* Espaciado entre la imagen y el título */
+}
+
+h1 {
+    margin: 0;
+    font-size: 24px; /* Tamaño del título */
+}
+
+/* Estilos adicionales para los elementos del formulario según sea necesario */
+.form__cambio__username,
+.form__cambio__email,
+.form__cambio__password {
+    margin-top: 20px; /* Espaciado entre las secciones del formulario */
+}
+
+.contenidoU{
+    font-size: 8px;
+    position: absolute;
+    padding: 132.5px 80px ;
+    flex-direction: row;
+    text-align: left;
+}

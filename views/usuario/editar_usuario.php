@@ -13,13 +13,13 @@
 <?php if(isset($_SESSION['id_usuario'])) { ?>
         <nav class="navbar">
             <div class="logo"> 
-                <a href="index.php"> <h1>F&F</h1> </a>
+                <a href="../../index.php"> <h1>F&F</h1> </a>
             </div>
         
             <div class="navlink">
-                <a href="./views/about.php">About</a>
+                <a href="../about.php">About</a>
                 <a href="servicios.html">Services</a>
-                <a href="./views/v_favoritos.php">Favoritos</a>
+                <a href="../v_favoritos.php">Favoritos</a>
             </div>
 
             <div class="autorizacion">
@@ -45,50 +45,55 @@
         </nav>
     <?php } ?>
 
+
     <div class="contenedor">
         <img class="img" src="../../assets/perfil.png">
-        <div class="contenido">
+        <div class="contenidoU">
+            <img class="logo-grande" src="../../assets/icon-person.png">
             <h1>Editar Datos del Usuario</h1>
 
-            <div class="form__cambio__username">
-                <h3>Nombre de usuario: <?php echo $_SESSION['user'] ?></h3>
-                <form action="../../api.php" method="post">
-                    <input type="text" style="display: none;" name="column" value="usuario">
-                    <input type="text" style="display: none;" name="resource" value="usuarios">
-                    <input type="text" style="display: none;" name="service" value="edit">
-                    <input type="text" name="new_data" id="entradaUsername" oninput="validarUsername(this, 8)">
-                    <button type="submit" id="guardarBtn" disabled>Guardar</button>
-                    <div id="errorMessage" class="errorM">Debe tener al menos 8 caracteres.</div>
-                    <div id="errorMessageUser" class="errorMu">No puede puede ingresar el mismo nombre de usuario</div>
-                </form>
-            </div>
+            <div>
+                <div class="form__cambio__username">
+                    <h3>Nombre de usuario: <?php echo $_SESSION['user'] ?></h3>
+                    <form action="../../api.php" method="post">
+                        <input type="text" style="display: none;" name="column" value="usuario">
+                        <input type="text" style="display: none;" name="resource" value="usuarios">
+                        <input type="text" style="display: none;" name="service" value="edit">
+                        <input type="text" name="new_data" id="entradaUsername" oninput="validarUsername(this, 8)">
+                        <button type="submit" id="guardarBtn" disabled>Guardar</button>
+                        <div id="errorMessage" class="errorM">Debe tener al menos 8 caracteres.</div>
+                        <div id="errorMessageUser" class="errorMu">No puede puede ingresar el mismo nombre de usuario</div>
+                    </form>
+                </div>
 
-            <div class="form__cambio__email">
-                <h3>Correo: <?php echo $_SESSION['email'] ?></h3>
-                <form action="../../api.php" method="post">
-                    <input type="text" style="display: none;" name="column" value="correo">
-                    <input type="text" style="display: none;" name="resource" value="usuarios">
-                    <input type="text" style="display: none;" name="service" value="edit">
-                    <input type="email" name="new_data" id="entradaCorreo" oninput="validarCorreo(this)">
-                    <div id="errorMessageEmail" class="error__message__email">Ha ingresado su correo actual 🤡</div>
-                    <button type="submit" id="guardarBtn2" disabled>Guardar</button>
-                </form>
-            </div>
+                <div class="form__cambio__email">
+                    <h3>Correo: <?php echo $_SESSION['email'] ?></h3>
+                    <form action="../../api.php" method="post">
+                        <input type="text" style="display: none;" name="column" value="correo">
+                        <input type="text" style="display: none;" name="resource" value="usuarios">
+                        <input type="text" style="display: none;" name="service" value="edit">
+                        <input type="email" name="new_data" id="entradaCorreo" oninput="validarCorreo(this)">
+                        <div id="errorMessageEmail" class="error__message__email">Ha ingresado su correo actual 🤡</div>
+                        <button type="submit" id="guardarBtn2" disabled>Guardar</button>
+                    </form>
+                </div>
 
-            <div class="form__cambio__password">
-                <h3>Contraseña:</h3>
-                <form action="../../api.php" method="post">
-                    <input type="text" style="display: none;" name="column" value="contrasena">
-                    <input type="text" style="display: none;" name="resource" value="usuarios">
-                    <input type="text" style="display: none;" name="service" value="edit">
-                    <label>Contraseña Actual</label>
-                    <div id="errorOldPass" class="error__old__pass"></div>
-                    <input type="password" oninput="validarOldPassword(this)">
-                    <label>Nueva Contraseña</label>
-                    <input type="password" id="new_password" name="new_data" disabled oninput="validarNewPassword(this)" >
-                    <div id="errorPass" class="error__message__pass"></div>
-                    <button type="submit" id="guardarBtn3" disabled>Guardar</button>
-                </form>
+                <div class="form__cambio__password">
+                    <h3>Contraseña:</h3>
+                    <form action="../../api.php" method="post">
+                        <input type="text" style="display: none;" name="column" value="contrasena">
+                        <input type="text" style="display: none;" name="resource" value="usuarios">
+                        <input type="text" style="display: none;" name="service" value="edit">
+                        <label>Contraseña Actual</label>
+                        <div id="errorOldPass" class="error__old__pass"></div>
+                        <input type="password" oninput="validarOldPassword(this)">
+                        <label>Nueva Contraseña</label>
+                        <input type="password" id="new_password" name="new_data" disabled oninput="validarNewPassword(this)" >
+                        <div id="errorPass" class="error__message__pass"></div>
+                        <button type="submit" id="guardarBtn3" disabled>Guardar</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div> 

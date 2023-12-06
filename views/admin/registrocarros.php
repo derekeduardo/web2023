@@ -40,13 +40,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/styles-admin.css">
     <title>Registro Autos</title>
 </head>
 <body>
   <?php include '../components/session.php' ?>
     <?php if($_SESSION['rol'] === 'admin'){ ?>
-    <center>
-        <h1>Registro de Autos</h1>
+
+    <nav class="navbar">
+        <div class="logo"> 
+            <a href="dashboard.php"> <h1>F&F</h1> </a>
+        </div>
+    
+        <div class="navlink">
+            <a href="registrocarros.php">Añadir vehículos</a>
+            <a href="testdrive.php">Solicitudes de Test Drive</a>
+        </div>
+
+        <div class="autorizacion">
+            <a href="../../api.php?resource=usuarios&service=logout">Logout</a>
+        </div>
+    </nav>
+
+        <h1 class="title">Registro de Autos</h1>
 
         <form action="registrocarros.php" method = "POST" enctype="multipart/form-data">
             <label>Nombre del auto:</label>
@@ -64,13 +80,12 @@
             <label>Imagen del vehiculo:</label>
             <input type="file" name="imagen"><br><br>
 
-            <center>
-                <input type="submit" name="registrar" value="Registrar">
-                <button><a href="index.php">Catálogo</a></button>
-            </center>
+            <input type="submit" name="registrar" value="Registrar">
+            <button><a href="index.php">Catálogo</a></button>
+            
 
         </form>
-    </center>
+
     <?php } else { ?>
         <?php echo '<div>
             <h1>No tiene las credenciales suficientes para utilizar este apartado</h1>

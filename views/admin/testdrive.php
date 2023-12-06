@@ -7,27 +7,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/styles-admin.css">
     <title><?php echo $title_info ?></title>
 </head>
 <body>    
-    <nav>
-        <div>
-            <ul>
-                <li><h1>Logo</h1></li>
-                <li><div>
-                    <a href="./views/perfil.php">Perfil</a>
-                    <a href="./services/logout.php">Logout</a>
-                </div></li>
-                <li><div>
-                    <a href="./views/login.php">Iniciar Sesión</a>
-                    <a href="./views/registro.php">Registrarse</a>
-                </div></li>
-            </ul>
+    <nav class="navbar">
+        <div class="logo"> 
+            <a href="dashboard.php"> <h1>F&F</h1> </a>
+        </div>
+    
+        <div class="navlink">
+            <a href="registrocarros.php">Añadir vehículos</a>
+            <a href="testdrive.php">Solicitudes de Test Drive</a>
+        </div>
+
+        <div class="autorizacion">
+            <a href="../../api.php?resource=usuarios&service=logout">Logout</a>
         </div>
     </nav>
 
-    <h1>TestDrive</h1>
+    <h1 class="title">TestDrive</h1>
     <br>
 
     <!-- Contenedor para mostrar los datos de la API -->
@@ -55,14 +54,17 @@ if ($response !== false) {
     if (!empty($data)) {
         foreach ($data as $testdrive) {
             $contenedorDatos .= '
-                <div>
+                <div class="testdrives">
                     <h2>ID Test: ' . $testdrive['id_test'] . '</h2>
-                    <h3>ID Carro: ' . $testdrive['id_carro'] . '</h3>
-                    <p>ID Usuario: ' . $testdrive['id_user'] . '</p>
-                    <p>Nombre del Carro: ' . $testdrive['nombre'] . '</p>
-                    <p>Usuario: ' . $testdrive['usuario'] . '</p>
-                    <p>Correo: ' . $testdrive['correo'] . '</p>
-                    <p>Fecha: ' . $testdrive['fecha'] . '</p>
+                    <hr>
+                    <div class="direccion">
+                        <h4>ID Carro: ' . $testdrive['id_carro'] . '</h4>
+                        <p>ID Usuario: ' . $testdrive['id_user'] . '</p>
+                        <p>Nombre del Carro: ' . $testdrive['nombre'] . '</p>
+                        <p>Usuario: ' . $testdrive['usuario'] . '</p>
+                        <p>Correo: ' . $testdrive['correo'] . '</p>
+                        <p>Fecha: ' . $testdrive['fecha'] . '</p>
+                    </div>
                 </div>';
         }
     } else {
