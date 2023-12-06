@@ -180,12 +180,12 @@
             
 
             if(data.length < 8){
-                errorMessage.innerHTML = "La contraseña debe tener un mínimo de 8 carácteres 🔒";
+                errorMessage.innerHTML = "La contraseña debe tener un mínimo de 8 carácteres";
                 errorMessage.style.display = "block";
             }else{
                 errorMessage.style.display = "none";
                 if(data === currentPassword){
-                    errorMessage.innerHTML = "Has escrito la misma contraseña 🤡";
+                    errorMessage.innerHTML = "Has escrito la misma contraseña ";
                     errorMessage.style.display = "block";
                 }else{
                     errorMessage.style.display = "none";

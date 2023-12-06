@@ -75,7 +75,7 @@
             <p>9-973-2082</p>
         </div>
         <div class="person">
-            <h3>Derek Cardenas</h3>
+            <h3>Derek Cárdenas</h3>
             <p>8-967-194</p>
         </div>
 
